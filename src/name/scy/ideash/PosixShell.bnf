@@ -1,0 +1,17 @@
+{
+	parserClass="name.scy.ideash.PosixShellParser"
+	extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+	psiClassPrefix="PosixShell"
+	psiImplClassSuffix="Impl"
+	psiPackage="name.scy.ideash.psi"
+	psiImplPackage="name.scy.ideash.psi.impl"
+	elementTypeHolderClass="name.scy.ideash.psi.PosixShellTypes"
+	elementTypeClass="name.scy.ideash.psi.PosixShellElementType"
+	tokenTypeClass="name.scy.ideash.psi.PosixShellTokenType"
+}
+
+posixShellFile ::= line_*
+
+private line_ ::= (whatever|COMMENT|CRLF)
+
+whatever ::= (KEY? SEPARATOR VALUE?) | KEY
